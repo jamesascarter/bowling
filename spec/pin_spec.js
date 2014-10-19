@@ -11,3 +11,19 @@ describe("Pin", function(){
 		expect(pin.isUpright).toBe(false)
 	});
 });
+
+describe("Frame", function(){
+
+	it("should contain pins", function(){
+		frame = new Frame
+		expect(frame.pins instanceof Array).toEqual(true)
+	});
+
+	it("should contain 10 pins", function(){
+		frame = new Frame
+		pin = new Pin
+		frame.addPins(pin)
+		expect(frame.pins.length).toEqual(10)
+	});
+
+});
