@@ -35,8 +35,14 @@ describe("Frame", function(){
 		frame1 = new Frame
 		frame1.bowl(0,4)
 		expect(frame1.score).toEqual([4])
+	});
 
-
+	it('should contain only two scores', function(){
+		frame1 = new Frame
+		frame1.bowl(0,4)
+		frame1.bowl(0,4)
+		frame1.bowl(0,2)
+		expect(frame1.score).toEqual([4,4])
 	});
 
 });
