@@ -1,9 +1,11 @@
 describe("Pin", function(){
 
+	var pin;
+
 	beforeEach(function(){
 
-		pin = new Pin
-		frame = new Frame
+	pin = new Pin;
+
 	});
 
 	it("should be upright once is created", function(){
@@ -18,8 +20,14 @@ describe("Pin", function(){
 
 describe("Frame", function(){
 
-	it("should contain pins", function(){
-		expect(frame.pins instanceof Array).toEqual(true)
+	var frame;
+	var pin;
+
+	beforeEach(function(){
+
+		frame = new Frame;
+		pin = new Pin;
+
 	});
 
 	it("should contain 10 pins", function(){
@@ -27,22 +35,20 @@ describe("Frame", function(){
 	});
 
 	it("should be able to knock down a number of pins", function(){
-		frame.bowl(0, 5)
+		frame.bowl(5)
 		expect(frame.pins.length).toEqual(5)
 	});
 
 	it("should add result to the score", function(){
-		frame1 = new Frame
-		frame1.bowl(0,4)
-		expect(frame1.score).toEqual([4])
+		frame.bowl(4)
+		expect(frame.score).toEqual([4])
 	});
 
 	it('should contain only two scores', function(){
-		frame1 = new Frame
-		frame1.bowl(0,4)
-		frame1.bowl(0,4)
-		frame1.bowl(0,2)
-		expect(frame1.score).toEqual([4,4])
+		frame.bowl(4)
+		frame.bowl(4)
+		frame.bowl(2)
+		expect(frame.score).toEqual([4,4])
 	});
 
 });
