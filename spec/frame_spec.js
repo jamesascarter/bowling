@@ -38,4 +38,13 @@ describe("Frame", function(){
 
   });
 
+  it('should be able to sum the two scores and put them in a total array', function(){
+    frame.bowl(6)
+    frame.bowl(1)
+    frame.score.sum().pushTotal
+    expect(frame.totalScore).toEqual([7])
+
+
+  })
+
 });
