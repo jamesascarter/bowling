@@ -1,19 +1,22 @@
 describe("Frame", function(){
   var pin;
+  var frame;
+  var game;
 
   beforeEach(function(){
 
     frame = new Frame;
     pin = new Pin;
+    game = new Game;
 
   });
 
   it("should contain 10 pins", function(){
-    expect(frame.pins.length).toEqual(10)
+    expect(frame.pins.length).toEqual(10);
   });
 
   it("should be able to knock down a number of pins", function(){
-    frame.bowl(5)
+    frame.bowl(5);
     expect(frame.pins.length).toEqual(5)
   });
 
@@ -37,12 +40,10 @@ describe("Frame", function(){
   });
 
   it('should be able to sum the two scores and put them in a total array', function(){
-    frame.bowl(6)
+    frame.bowl(3)
     frame.bowl(1)
     frame.pushTotal()
-    expect(frame.totalScore).toEqual([7])
-
-
-  })
+    expect(game.totalScore).toEqual([4])
+  });
 
 });
