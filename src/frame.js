@@ -3,7 +3,7 @@ function Frame(pin) {
   this.score = [];
   this.pins = [];
   this.totalScore = [];
-  turnScore = this.score.sum(); 
+  this.turnScore = this.score.sum(); 
 
   for (i=0; i < 10; i++){
       this.pins.push(pin)};
@@ -27,6 +27,6 @@ Array.prototype.sum = function() {
   return sum;
 };
 
-Frame.prototype.pushTotal = function(frame) {
-  this.totalScore.push(turnScore)
+Frame.prototype.pushTotal = function() {
+  this.totalScore.push(frame.score.sum())
 };
