@@ -25,6 +25,8 @@ Array.prototype.sum = function() {
   return sum;
 };
 
-Game.prototype.pushTotal = function() {
-  this.totalScore.push(this.score.sum())
+Frame.prototype.pushTotal = function() {
+  var game = new Game;
+  var frame = new Frame;
+  game.totalScore.push(frame.score.sum())
 };

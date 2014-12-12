@@ -7,7 +7,6 @@ describe("Frame", function(){
 
     frame = new Frame;
     pin = new Pin;
-    game = new Game;
 
   });
 
@@ -37,13 +36,6 @@ describe("Frame", function(){
     frame.bowl(4)
     expect(frame.score.sum()).toEqual(8)
 
-  });
-
-  it('should be able to sum the two scores and put them in a total array', function(){
-    frame.bowl(3)
-    frame.bowl(1)
-    frame.pushTotal()
-    expect(game.totalScore).toEqual([4])
   });
 
 });

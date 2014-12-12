@@ -1,9 +1,13 @@
 function Game(frame){
 
   this.frames = [];
-  this.totalScore = [];
+  this.totalScore = 0;
 
-  for (i=0; i < 10; i++){
-      this.frames.push(frame)};
+  for (var i=0; i < 9; i++){
+      this.frames.push(new Frame)};
 
 };
+
+// Game.prototype.pushTotal = function() {
+//   this.totalScore.push(frame.score.sum())
+// };
