@@ -12,7 +12,7 @@ Frame.prototype.bowl = function(number) {
   INDEXNOUGHT = 0;
   FRAMESIZE = 2;
 
-  if (this.score.length < FRAMESIZE){
+  if (this.score.length < FRAMESIZE ||){
   this.pins.splice(INDEXNOUGHT, number)
   this.score.push(number)
 }

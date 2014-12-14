@@ -38,4 +38,10 @@ describe("Frame", function(){
 
   });
 
+  it('should return strike when strike is bowled', function(){
+    frame.bowl(10)
+    expect('strike')
+
+  });
+
 });
