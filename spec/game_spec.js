@@ -2,11 +2,13 @@ describe("Game", function(){
 
   var game;
   var frame;
+  var pin;
 
   beforeEach(function(){
 
-    game = new Game;
-    frame = new Frame;
+    pin = new Pin;
+    frame = new Frame(pin);
+    game = new Game(frame);
 
   });
 
@@ -14,13 +16,11 @@ describe("Game", function(){
     expect(game.frames.length).toEqual(9)
   });
 
-   it('should be able to sum the two scores and put them in a total array', function(){
+  it ('should be able to sum the two scores and put them in a total array', function(){
     frame.bowl(3)
     frame.bowl(1)
-    frame.pushTotal()
-    expect(game.totalScore).toEqual([4])
+    game.pushTotal(frame)
+    expect(game.totalScore.length).toEqual(1)
   });
-
-
 
 });

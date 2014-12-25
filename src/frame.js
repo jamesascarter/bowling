@@ -12,7 +12,7 @@ Frame.prototype.bowl = function(number) {
   INDEXNOUGHT = 0;
   FRAMESIZE = 2;
 
-  if (this.score.length < FRAMESIZE ||){
+  if (this.score.length < FRAMESIZE){
   this.pins.splice(INDEXNOUGHT, number)
   this.score.push(number)
 }
@@ -23,10 +23,4 @@ Frame.prototype.bowl = function(number) {
 Array.prototype.sum = function() {
   for (var i = 0, L = this.length, sum = 0; i < L; sum += this[i++]);
   return sum;
-};
-
-Frame.prototype.pushTotal = function() {
-  var game = new Game;
-  var frame = new Frame;
-  game.totalScore.push(frame.score.sum())
 };

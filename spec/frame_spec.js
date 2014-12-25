@@ -5,8 +5,9 @@ describe("Frame", function(){
 
   beforeEach(function(){
 
-    frame = new Frame;
+    frame = new Frame(pin);
     pin = new Pin;
+    game = new Game(frame);
 
   });
 
@@ -39,9 +40,8 @@ describe("Frame", function(){
   });
 
   it('should return strike when strike is bowled', function(){
-    frame.bowl(10)
-    expect('strike')
-
+    expect(frame.bowl_strike(10)).toEqual('strike')
   });
+
 
 });
