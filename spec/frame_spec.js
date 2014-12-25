@@ -6,6 +6,7 @@ describe("Frame", function(){
   beforeEach(function(){
 
     frame = new Frame(pin);
+    frame2 = new Frame(pin);
     pin = new Pin;
     game = new Game(frame);
 
@@ -56,8 +57,12 @@ describe("Frame", function(){
 
   it('should contain a potential bonus score', function(){
     expect(frame.bonus).toEqual(0);
-
   });
 
-
+  it('should add bonus score from next bowl if spare is bowled', function(){
+    frame.bowl(4);
+    frame.bowl(6);
+    frame2.bowl(1)
+    expect()
+  });
 });
