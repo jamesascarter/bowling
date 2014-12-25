@@ -24,3 +24,8 @@ Array.prototype.sum = function() {
   for (var i = 0, L = this.length, sum = 0; i < L; sum += this[i++]);
   return sum;
 };
+
+Frame.prototype.bowl_strike = function() {
+  this.score.push(10)
+  return ('strike')
+};
