@@ -9,5 +9,5 @@ function Game(frame){
 };
 
 Game.prototype.pushTotal = function(frame) {
-  this.totalScore.push(frame.score.sum())
+  this.totalScore.push(frame.score.sum());
 };

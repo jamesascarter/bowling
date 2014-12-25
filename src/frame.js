@@ -13,8 +13,8 @@ Frame.prototype.bowl = function(number) {
   FRAMESIZE = 2;
 
   if (this.score.length < FRAMESIZE){
-  this.pins.splice(INDEXNOUGHT, number)
-  this.score.push(number)
+  this.pins.splice(INDEXNOUGHT, number);
+  this.score.push(number);
 }
   else
   console.log('frame completed')
@@ -26,6 +26,10 @@ Array.prototype.sum = function() {
 };
 
 Frame.prototype.bowl_strike = function() {
-  this.score.push(10)
-  return ('strike')
+  this.score.push(10);
+  return ('strike');
+};
+
+Frame.prototype.isSpare = function() {
+  return (this.score.sum() === 10);
 };

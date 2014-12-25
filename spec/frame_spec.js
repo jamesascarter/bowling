@@ -48,5 +48,11 @@ describe("Frame", function(){
     expect(frame.score.sum()).toEqual(10)
   });
 
+  it("should return true and notify when spare is bowled", function(){
+    frame.bowl(4);
+    frame.bowl(6);
+    expect(frame.isSpare()).toEqual(true)
+  });
+
 
 });
