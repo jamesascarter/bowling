@@ -2,6 +2,7 @@ function Frame(pin) {
 
   this.score = [];
   this.pins = [];
+  this.bonus = 0;
 
   for (i=0; i < 10; i++){
       this.pins.push(pin)};
