@@ -8,7 +8,7 @@ describe("Game", function(){
 
     pin = new Pin;
     frame = new Frame(pin);
-    game = new Game(frame);
+    game = new Game();
 
   });
 

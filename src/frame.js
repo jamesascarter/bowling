@@ -1,6 +1,6 @@
 function Frame(pin) {
 
-  this.score = 0;
+  this.score = [];
   this.pins = [];
   this.bonus = 0;
 

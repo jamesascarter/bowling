@@ -8,7 +8,7 @@ describe("Frame", function(){
     frame = new Frame(pin);
     frame2 = new Frame(pin);
     pin = new Pin;
-    game = new Game(frame);
+    game = new Game();
 
   });
 
@@ -52,17 +52,17 @@ describe("Frame", function(){
   it("should return true and when spare is bowled", function(){
     frame.bowl(4);
     frame.bowl(6);
-    expect(frame.isSpare()).toEqual(true)
+    expect(frame.isSpare()).toEqual(true);
+  });
+
+  it('should add bonus score from next bowl if spare is bowled', function(){
+    frame.bowl(4);
+    frame.bowl(1);
+    expect(frame.isSpare()).toEqual(false);
   });
 
   it('should contain a potential bonus score', function(){
     expect(frame.bonus).toEqual(0);
   });
 
-  it('should add bonus score from next bowl if spare is bowled', function(){
-    frame.bowl(4);
-    frame.bowl(6);
-    frame2.bowl(1)
-    expect()
-  });
 });

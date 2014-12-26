@@ -1,13 +1,14 @@
-function Game(frame){
+function Game(){
 
-  this.frames = [];
   this.totalScore = [];
+  this.frames = [];
 
   for (var i=0; i < 9; i++){
-      this.frames.push(new Frame)};
+      this.frames[i] = 'frame' + i;
+    };
 
 };
 
 Game.prototype.pushTotal = function(frame) {
-  this.totalScore.push(frame.score.sum());
+  this.totalScore.push(frame.score);
 };
