@@ -26,11 +26,11 @@ Array.prototype.sum = function() {
   return sum;
 };
 
-Frame.prototype.bowl_strike = function() {
+Frame.prototype.bowlStrike = function() {
   this.score.push(10);
   return ('strike');
 };
 
 Frame.prototype.isSpare = function() {
-  return (this.score.sum() === 10);
+  return (this.score.sum() === 10 && this.score[0] != 10);
 };

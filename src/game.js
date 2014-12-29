@@ -20,8 +20,13 @@ Game.prototype.nextFrameNo = function(frame) {
 
 Game.prototype.applyBonuses = function() {
 	for (var i=0; i < 9; i++){
-      if (this.frames[i].score.sum() == 10){
+
+      if (this.frames[i].isSpare()){
       	this.bonuses.push(this.frames[i + 1].score[0])
       };
+
+      if (this.frames[i].score[0] === 10){
+				this.bonuses.push(this.frames[i + 1].score.sum())
+			};
     };
 };

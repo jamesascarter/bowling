@@ -34,6 +34,14 @@ describe("Game", function(){
     game.frames[1].bowl(0)
     game.applyBonuses()
     expect(game.bonuses).toEqual([1])
-  })
+  });
+
+  it('should add next 2 bowls to bonus score when strike is bowled', function(){
+    game.frames[0].bowlStrike()
+    game.frames[1].bowl(1)
+    game.frames[1].bowl(1)
+    game.applyBonuses()
+    expect(game.bonuses).toEqual([2])
+  });
 
 });

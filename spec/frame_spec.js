@@ -41,11 +41,11 @@ describe("Frame", function(){
   });
 
   it('should return strike when strike is bowled', function(){
-    expect(frame.bowl_strike()).toEqual('strike')
+    expect(frame.bowlStrike()).toEqual('strike')
   });
 
   it('should add 10 to score when strike is bowled', function(){
-    frame.bowl_strike()
+    frame.bowlStrike()
     expect(frame.score.sum()).toEqual(10)
   });
 
