@@ -25,7 +25,7 @@ Game.prototype.applyBonuses = function() {
       	this.bonuses.push(this.frames[i + 1].score[0])
       };
 
-      if (this.frames[i].score[0] === 10){
+      if (this.frames[i].isStrike()){
 				this.bonuses.push(this.frames[i + 1].score.sum())
 			};
     };

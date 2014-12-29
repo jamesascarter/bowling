@@ -37,7 +37,6 @@ describe("Frame", function(){
     frame.bowl(4)
     frame.bowl(4)
     expect(frame.score.sum()).toEqual(8)
-
   });
 
   it('should return strike when strike is bowled', function(){
@@ -49,20 +48,22 @@ describe("Frame", function(){
     expect(frame.score.sum()).toEqual(10)
   });
 
-  it("should return true and when spare is bowled", function(){
+  it("should check and know when spare is bowled", function(){
     frame.bowl(4);
     frame.bowl(6);
     expect(frame.isSpare()).toEqual(true);
+  });
+
+  it("should check and know when strike is bowled", function(){
+    frame.bowlStrike();
+    frame.isStrike();
+    expect(frame.isStrike()).toEqual(true);
   });
 
   it('should add bonus score from next bowl if spare is bowled', function(){
     frame.bowl(4);
     frame.bowl(1);
     expect(frame.isSpare()).toEqual(false);
-  });
-
-  xit('should contain a potential bonus score', function(){
-    expect(frame.bonus).toEqual(0);
   });
 
 });

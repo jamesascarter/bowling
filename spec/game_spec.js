@@ -28,20 +28,28 @@ describe("Game", function(){
   });
 
   it('should add next bowl to bonus score when spare is bowled', function(){
-    game.frames[0].bowl(3)
-    game.frames[0].bowl(7)
-    game.frames[1].bowl(1)
-    game.frames[1].bowl(0)
-    game.applyBonuses()
-    expect(game.bonuses).toEqual([1])
+    game.frames[0].bowl(3);
+    game.frames[0].bowl(7);
+    game.frames[1].bowl(1);
+    game.frames[1].bowl(0);
+    game.applyBonuses();
+    expect(game.bonuses).toEqual([1]);
   });
 
   it('should add next 2 bowls to bonus score when strike is bowled', function(){
-    game.frames[0].bowlStrike()
-    game.frames[1].bowl(1)
-    game.frames[1].bowl(1)
-    game.applyBonuses()
-    expect(game.bonuses).toEqual([2])
+    game.frames[0].bowlStrike();
+    game.frames[1].bowl(1);
+    game.frames[1].bowl(1);
+    game.applyBonuses();
+    expect(game.bonuses).toEqual([2]);
+  });
+
+  it('should add bonus of 20 points if 2 strikes are bowled after a strike i.e three consecutive', function(){
+    game.frames[0].bowlStrike();
+    game.frames[1].bowlStrike();
+    game.frames[2].bowlStrike();
+    game.applyBonuses();
+    expect(game.bonuses).toEqual([10, 10, 10])
   });
 
 });

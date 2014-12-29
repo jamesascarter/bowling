@@ -34,3 +34,7 @@ Frame.prototype.bowlStrike = function() {
 Frame.prototype.isSpare = function() {
   return (this.score.sum() === 10 && this.score[0] != 10);
 };
+
+Frame.prototype.isStrike = function() {
+  return (this.score[0] === 10)
+};
