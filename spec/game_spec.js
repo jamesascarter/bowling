@@ -17,10 +17,14 @@ describe("Game", function(){
   });
 
   it ('should be able to sum the two scores and put them in a total array', function(){
-    frame.bowl(3)
-    frame.bowl(1)
+    game.frames[0].bowl(3)
+    game.frames[0].bowl(1)
     game.pushTotal(frame)
     expect(game.totalScore.length).toEqual(1)
+  });
+
+  it ('should know which is the next frame', function(){
+    expect(game.nextFrameNo(game.frames[0])).toEqual(1);
   });
 
 });
