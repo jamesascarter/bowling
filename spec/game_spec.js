@@ -23,10 +23,6 @@ describe("Game", function(){
     expect(game.totalScore.length).toEqual(1)
   });
 
-  it('should know which is the next frame', function(){
-    expect(game.nextFrameNo(game.frames[0])).toEqual(1);
-  });
-
   it('should add next bowl to bonus score when spare is bowled', function(){
     game.frames[0].bowl(3);
     game.frames[0].bowl(7);
@@ -48,8 +44,11 @@ describe("Game", function(){
     game.frames[0].bowlStrike();
     game.frames[1].bowlStrike();
     game.frames[2].bowlStrike();
+    game.frames[3].bowl(3);
+    game.frames[3].bowl(3)
     game.applyBonuses();
-    expect(game.bonuses).toEqual([10, 10, 10])
+    console.log(game.bonuses)
+    expect(game.bonuses).toEqual([20, 13, 6])
   });
 
 });
