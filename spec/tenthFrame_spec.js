@@ -12,6 +12,17 @@ describe("tenthFrame", function(){
     expect(tenthFrame.pins.length).toEqual(10)
   });
 
-  it('should add ')
+  it('should add 2 to tenthScore if player bowls 1 and 1', function(){
+  	tenthFrame.bowl(1);
+  	tenthFrame.bowl(1);
+  	expect(tenthFrame.tenthScore).toEqual([1,1])
+  });
+
+  it('should only allow 2 bowls if no strike/spare is bowled', function(){
+  	tenthFrame.bowl(1);
+  	tenthFrame.bowl(1);
+  	tenthFrame.bowl(1);
+  	expect(tenthFrame.tenthScore).toEqual([1,1])
+  });
 
   });
