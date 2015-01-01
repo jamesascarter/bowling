@@ -27,6 +27,4 @@ function TenthFrame(pin) {
 		};
 	};
 
-	if 
-
 };
