@@ -9,13 +9,9 @@ function TenthFrame(pin) {
   };
 };
 
-  TenthFrame.prototype.bowl = function(number) {
+TenthFrame.prototype.bowl = function(number) {
 
   INDEXNOUGHT = 0;
-
-
-  if (this.tenthScore.sum() != 10 && this.tenthScore[0] != 10){
-
   FRAMESIZE = 2;
 
   	if (this.tenthScore.length < FRAMESIZE) {
@@ -25,6 +21,13 @@ function TenthFrame(pin) {
 		else{
 			return 'Game completed'
 		};
-	};
+};
 
+TenthFrame.prototype.bonusBowl = function(number) {
+	if (this.tenthScore[0] === 10 || this.tenthScore.sum() === 10){
+		this.tenthScore.push(number);
+	}
+	else{
+		return 'bonus frame completed'
+	};
 };

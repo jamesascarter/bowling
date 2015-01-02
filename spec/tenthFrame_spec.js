@@ -28,8 +28,15 @@ describe("tenthFrame", function(){
   it('should allow 3 bowls if strike is bowled on first bowl', function(){
   	tenthFrame.bowl(10);
   	tenthFrame.bowl(1);
-  	tenthFrame.bowl(1);
+  	tenthFrame.bonusBowl(1);
   	expect(tenthFrame.tenthScore).toEqual([10,1,1])
+  });
+
+  it('should allow 2 bowls if no strike/spare is bowled on first bowl', function(){
+  	tenthFrame.bowl(1);
+  	tenthFrame.bowl(1);
+  	tenthFrame.bonusBowl(1);
+  	expect(tenthFrame.tenthScore).toEqual([1,1])
   });
 
   });
