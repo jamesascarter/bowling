@@ -37,3 +37,13 @@ Frame.prototype.isSpare = function() {
 Frame.prototype.isStrike = function() {
   return (this.score[0] === 10)
 };
+
+Frame.prototype.bonusBowl = function(number) {
+  if (this.score.length === 2 && this.score.sum() === 10 || this.score[0] === 10){
+    this.score.push(number);
+  }
+
+  else {
+    this.score.push(number);
+  };
+};

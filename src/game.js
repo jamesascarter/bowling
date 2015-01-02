@@ -4,7 +4,7 @@ function Game(){
   this.frames = [];
   this.bonuses = [];
 
-  for (var i=0; i < 9; i++){
+  for (var i=0; i < 10; i++){
       this.frames[i] = new Frame;
     };
 

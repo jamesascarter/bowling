@@ -13,7 +13,7 @@ describe("Game", function(){
   });
 
   it('should contain 10 frames', function(){
-    expect(game.frames.length).toEqual(9)
+    expect(game.frames.length).toEqual(10)
   });
 
   it('should be able to sum the two scores and put them in a total array', function(){
@@ -47,8 +47,14 @@ describe("Game", function(){
     game.frames[3].bowl(3);
     game.frames[3].bowl(3)
     game.applyBonuses();
-    console.log(game.bonuses)
     expect(game.bonuses).toEqual([20, 13, 6])
+  });
+
+  it('should be able to calculate the total score of a game', function(){
+    game.frames[9].bowlStrike();
+    game.frames[9].bowlStrike();
+    game.frames[9].bonusBowl(10);
+    expect(game.frames[9].score).toEqual([10,10,10])
   });
 
 });

@@ -19,7 +19,7 @@ TenthFrame.prototype.bowl = function(number) {
   		this.tenthScore.push(number);
 		}
 		else{
-			return 'Game completed'
+			return 'Game completed';
 		};
 };
 
@@ -28,6 +28,6 @@ TenthFrame.prototype.bonusBowl = function(number) {
 		this.tenthScore.push(number);
 	}
 	else{
-		return 'bonus frame completed'
+		return 'Game completed';
 	};
 };
