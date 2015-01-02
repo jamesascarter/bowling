@@ -50,11 +50,20 @@ describe("Game", function(){
     expect(game.bonuses).toEqual([20, 13, 6])
   });
 
-  it('should be able to calculate the total score of a game', function(){
+  it('should be able to calculate score of 30 if three strikes are bowled in final frame', function(){
     game.frames[9].bowlStrike();
     game.frames[9].bowlStrike();
     game.frames[9].bonusBowl(10);
     expect(game.frames[9].score).toEqual([10,10,10])
+  });
+
+  it('should add bonus of 20 if 3 strikes bowled starting at frame 9', function(){
+    game.frames[8].bowlStrike();
+    game.frames[9].bowlStrike();
+    game.frames[9].bowlStrike();
+    console.log(game.bonuses);
+    game.applyBonuses();
+    expect(game.bonuses).toEqual([20]);
   });
 
 });
