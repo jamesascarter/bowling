@@ -1,3 +1,7 @@
+### 10-Pin Bowling
+
+This challenge set by Makers Academy requires me to:
+
 Task: 
 
 Count and sum the scores of a bowling game of one player(in javascript).
@@ -26,6 +30,60 @@ Perfect Game
 
 A Perfect Game is when the player rolls 12 strikes (10 regular strikes and 2 strikes for the bonus in the 10th frame). The Perfect Game scores to 300 points.
 
-### Need to do:
+### Tech
 
-bonus needs to be completed.
+* Javascript
+* Jasmine (testing)
+* Dillinger - Markdown Editor
+
+### How to use
+
+Clone this repo:
+```sh
+$ git clone https://github.com/jamesascarter/bowling.git
+```
+
+Change into the directory:
+```sh
+$ cd Bowling
+```
+
+To run the Jasmine tests:
+```sh
+$ open SpecRunner.html
+```
+
+To run the code (e.g Perfect Game):
+
+Firstly open up the console in the browser with Jasmine tests open.
+```sh
+$ game = new Game;
+$ game.frames[0].bowlStrike();
+$ game.frames[1].bowlStrike();
+$ game.frames[2].bowlStrike();
+$ game.frames[3].bowlStrike();
+$ game.frames[4].bowlStrike();
+$ game.frames[5].bowlStrike();
+$ game.frames[6].bowlStrike();
+$ game.frames[7].bowlStrike();
+$ game.frames[8].bowlStrike();
+$ game.frames[9].bowlStrike();
+$ game.frames[9].bowlStrike();
+$ game.applyBonuses();
+$ game.frames[9].bonusBowl(10);
+$ game.pushTotal();
+$ game.calculateTotal(); 
+    
+```
+
+I have implemented a bowl method with which you can specify number of pins hit.
+
+### Improvements
+
+* Clean up applyBonuses method.
+* Further testing of diferent scoring secnarios to ensure all are covered.
+* Name frames rather than using [0] index to specify frames.(e.g Frame1 rather than game.frames[0]).
+* Fix penultimate game test. This tests bonuses are still added for 9th frame if is a strike. Logic works as shown in final test so must amend to pass.
+
+
+

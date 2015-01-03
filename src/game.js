@@ -22,7 +22,7 @@ Game.prototype.applyBonuses = function() {
       	this.bonuses.push(this.frames[i + 1].score[0]);
       }
 
-      if (i === 8 & this.frames[8].isStrike()){
+      if (i === 8 && this.frames[8].isStrike()){
 				this.bonuses.push(this.frames[9].score.sum());
 			}
 

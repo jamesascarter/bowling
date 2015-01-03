@@ -44,6 +44,6 @@ Frame.prototype.bonusBowl = function(number) {
   }
 
   else {
-    this.score.push(number);
+    return 'Game over'
   };
 };
