@@ -57,11 +57,10 @@ describe("Game", function(){
     expect(game.frames[9].score).toEqual([10,10,10])
   });
 
-  it('should add bonus of 20 if 3 strikes bowled starting at frame 9', function(){
+  xit('should add bonus of 20 if 3 strikes bowled starting at frame 9', function(){
     game.frames[8].bowlStrike();
     game.frames[9].bowlStrike();
     game.frames[9].bowlStrike();
-    console.log(game.bonuses);
     game.applyBonuses();
     expect(game.bonuses).toEqual([20]);
   });
@@ -78,9 +77,10 @@ describe("Game", function(){
     game.frames[8].bowlStrike();
     game.frames[9].bowlStrike();
     game.frames[9].bowlStrike();
-    game.frames[9].bonusBowl(10);
-    game.pushTotal()
     game.applyBonuses();
+    game.frames[9].bonusBowl(10);
+    game.pushTotal();
+    console.log(game.bonuses.sum());
     expect(game.calculateTotal()).toEqual(300);
 
   });
