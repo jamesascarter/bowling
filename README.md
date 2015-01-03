@@ -58,6 +58,8 @@ To run the code (e.g Perfect Game):
 Firstly open up the console in the browser with Jasmine tests open.
 ```sh
 $ game = new Game;
+$ pin = new Pin;
+$ frame = new Frame;
 $ game.frames[0].bowlStrike();
 $ game.frames[1].bowlStrike();
 $ game.frames[2].bowlStrike();
