@@ -20,7 +20,7 @@ describe("Game", function(){
     game.frames[0].bowl(3)
     game.frames[0].bowl(1)
     game.pushTotal(frame)
-    expect(game.totalScore.length).toEqual(1)
+    expect(game.totalScore[0]).toEqual(4)
   });
 
   it('should add next bowl to bonus score when spare is bowled', function(){
