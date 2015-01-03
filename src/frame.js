@@ -39,7 +39,7 @@ Frame.prototype.isStrike = function() {
 };
 
 Frame.prototype.bonusBowl = function(number) {
-  if (this.score.length === 2 && this.score.sum() === 10 || this.score[0] === 10){
+  if (this.score.length === 2 && this.isStrike() || this.isStrike()){
     this.score.push(number);
   }
 

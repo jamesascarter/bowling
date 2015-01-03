@@ -66,4 +66,23 @@ describe("Game", function(){
     expect(game.bonuses).toEqual([20]);
   });
 
+  it('should be able to provide a total score for the round', function(){
+    game.frames[0].bowlStrike();
+    game.frames[1].bowlStrike();
+    game.frames[2].bowlStrike();
+    game.frames[3].bowlStrike();
+    game.frames[4].bowlStrike();
+    game.frames[5].bowlStrike();
+    game.frames[6].bowlStrike();
+    game.frames[7].bowlStrike();
+    game.frames[8].bowlStrike();
+    game.frames[9].bowlStrike();
+    game.frames[9].bowlStrike();
+    game.frames[9].bonusBowl(10);
+    game.pushTotal()
+    game.applyBonuses();
+    expect(game.calculateTotal()).toEqual(300);
+
+  });
+
 });
