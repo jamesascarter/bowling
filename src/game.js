@@ -5,7 +5,7 @@ function Game(){
   this.bonuses = [];
 
   for (var i=0; i < 10; i++){
-      this.frames[i] = new Frame;
+      this.frames[i] = (new Frame);
     };
 
 };
@@ -26,7 +26,7 @@ Game.prototype.applyBonuses = function() {
 				this.bonuses.push(this.frames[9].score.sum());
 			}
 
-      if (this.frames[i].isStrike() && this.frames[i + 1].score[0] != 10){
+      if (this.frames[i].isStrike() && this.frames[i + 1].score[0] !== 10){
 				this.bonuses.push(this.frames[i + 1].score.sum());
 			}
 
@@ -45,5 +45,5 @@ Game.prototype.applyBonuses = function() {
 };
 
 Game.prototype.calculateTotal = function() {
-	return(this.bonuses.sum() + this.totalScore.sum())
+	return(this.bonuses.sum() + this.totalScore.sum());
 };

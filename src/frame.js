@@ -4,7 +4,7 @@ function Frame(pin) {
   this.pins = [];
 
   for (i=0; i < 10; i++){
-      this.pins.push(pin)};
+      this.pins.push(pin)}
 };
 
 Frame.prototype.bowl = function(number) {
@@ -17,7 +17,7 @@ Frame.prototype.bowl = function(number) {
   this.score.push(number);
 }
   else
-  console.log('frame completed')
+  return('frame completed')
 };
 
 Array.prototype.sum = function() {
@@ -31,11 +31,11 @@ Frame.prototype.bowlStrike = function() {
 };
 
 Frame.prototype.isSpare = function() {
-  return (this.score.sum() === 10 && this.score[0] != 10);
+  return (this.score.sum() === 10 && this.score[0] !== 10);
 };
 
 Frame.prototype.isStrike = function() {
-  return (this.score[0] === 10)
+  return (this.score[0] === 10);
 };
 
 Frame.prototype.bonusBowl = function(number) {
@@ -44,6 +44,6 @@ Frame.prototype.bonusBowl = function(number) {
   }
 
   else {
-    return 'Game over'
+    return ('Game over');
   };
 };
